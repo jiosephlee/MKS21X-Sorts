@@ -1,9 +1,8 @@
 public class sorts{
-  public static void selectionsort(int [] ary) {
+  public static void selectionSort(int [] ary) {
     for (int x = 0; x < ary.length; x++){
-      min = ary[x];
+      int min = ary[x];
       for (int y = x; y < ary.length; y++){
-        min = ary[y];
         if (ary[y] < min){
           min = ary[y];
         }
