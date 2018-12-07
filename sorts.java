@@ -1,7 +1,21 @@
 public class sorts{
+  public static void main(String[] args) {
+    int[] data = {2,1,3,7,0,-1,4,2,7};
+    selectionSort(data);
+    for (int x = 0; x < data.length; x++){
+      System.out.print(data[x] + " ");
+    }
+    System.out.println();
+    int[] data2 = {2,1,3,7,0,-1,4,2,7};
+    bubbleSort(data2);
+    for (int x = 0; x < data2.length; x++){
+      System.out.print(data2[x] + " ");
+    }
+  }
   public static void selectionSort(int [] ary) {
+    int min = 0;
     for (int x = 0; x < ary.length; x++){
-      int min = ary[x];
+      min = ary[x];
       for (int y = x; y < ary.length; y++){
         if (ary[y] < min){
           min = ary[y];
