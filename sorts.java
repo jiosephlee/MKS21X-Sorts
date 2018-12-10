@@ -12,16 +12,22 @@ public class sorts{
       System.out.print(data2[x] + " ");
     }
   }
+
   public static void selectionSort(int [] ary) {
     int min = 0;
+    int hold = 0;
+    int holdind = 0;
     for (int x = 0; x < ary.length; x++){
       min = ary[x];
       for (int y = x; y < ary.length; y++){
         if (ary[y] < min){
           min = ary[y];
+          holdind = y;
         }
       }
+      hold = ary[x];
       ary[x] = min;
+      ary[holdind] = hold;
     }
   }
 
