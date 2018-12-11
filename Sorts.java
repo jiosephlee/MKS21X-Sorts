@@ -6,7 +6,7 @@ public class Sorts{
       System.out.print(data[x] + " ");
     }
     int[] data3 = {2,1,1,1,5,5,5,5,1,3,7,0,13,13,-5,5,-1,4,2,7};
-    selectionSort(data3);
+    insertionSort(data3);
     for (int x = 0; x < data3.length; x++){
       System.out.print(data3[x] + " ");
     }
@@ -52,19 +52,17 @@ public class Sorts{
   }
 
   public static void insertionSort(int[] data){
-    int min = 0;
-    int hold = 0;
-    int holdind = 0;
+    int swap, hold;
     for (int x = 1; x < data.length; x++){
+      swap = -1;
       for (int y = x; y > -1 && data[x] < data[x-1] ; y--){
-        if {
-          min = data[y];
-          holdind = y;
+          swap = y - 1;
         }
+      if (swap > -1){
+        hold = data[swap];
+        data[swap] = data[x];
+        data[x] = hold;
       }
-      hold = data[x];
-      data[x] = min;
-      data[holdind] = hold;
     }
   }
 
