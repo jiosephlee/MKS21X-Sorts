@@ -6,33 +6,31 @@ public class Sorts{
       System.out.print(data[x] + " ");
     }
     System.out.println();
-    int[] data3 = {1,3,2,5};
+    int[] data3 = {1,3,7,-1,5,2,12,0,2,5};
     insertionSort(data3);
     for (int x = 0; x < data3.length; x++){
       System.out.print(data3[x] + " ");
     }
     System.out.println();
-    int[] data2 = {2,1,3,7,0,-1,4,2,7};
-    bubbleSort(data2);
+    int[] data2 = new int[2000000];
     for (int x = 0; x < data2.length; x++){
-      System.out.print(data2[x] + " ");
+      data2[x] = 0;
     }
+    bubbleSort(data2);
   }
 
   public static void selectionSort(int [] ary) {
-    int min = 0;
-    int hold = 0;
+    int hold;
     int holdind = 0;
     for (int x = 0; x < ary.length; x++){
-      min = ary[x];
+      holdind = x;
       for (int y = x; y < ary.length; y++){
-        if (ary[y] < min){
-          min = ary[y];
+        if (ary[y] < ary[holdind]){
           holdind = y;
         }
       }
       hold = ary[x];
-      ary[x] = min;
+      ary[x] = ary[holdind];
       ary[holdind] = hold;
     }
   }
@@ -53,23 +51,12 @@ public class Sorts{
   }
 
   public static void insertionSort(int[] data){
-    int swap, hold;
+    int orig;
     for (int x = 1; x < data.length; x++){
-      swap = -1;
-      for (int y = x; y > -1 && data[x] < data[x-1] ; y--){
-          swap = y - 1;
-          System.out.println(swap);
-        }
-      if (swap > -1){
-        for (int a = 0; a < data.length; a++){
-          System.out.print(data[a] + " ");
-        }
-        hold = data[swap];
-        data[swap] = data[x];
-        data[x] = hold;
-        for (int a = 0; a < data.length; a++){
-          System.out.print(data[a] + " ");
-        }
+      orig = data[x];
+      for (int y = x; y > 0 && data[y] < data[y-1] ; y--){
+          data[y] = data[y-1];
+          data[y-1] = orig;
       }
     }
   }
