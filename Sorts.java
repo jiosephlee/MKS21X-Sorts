@@ -5,7 +5,8 @@ public class Sorts{
     for (int x = 0; x < data.length; x++){
       System.out.print(data[x] + " ");
     }
-    int[] data3 = {2,1,1,1,5,5,5,5,1,3,7,0,13,13,-5,5,-1,4,2,7};
+    System.out.println();
+    int[] data3 = {1,3,2,5};
     insertionSort(data3);
     for (int x = 0; x < data3.length; x++){
       System.out.print(data3[x] + " ");
@@ -57,11 +58,18 @@ public class Sorts{
       swap = -1;
       for (int y = x; y > -1 && data[x] < data[x-1] ; y--){
           swap = y - 1;
+          System.out.println(swap);
         }
       if (swap > -1){
+        for (int a = 0; a < data.length; a++){
+          System.out.print(data[a] + " ");
+        }
         hold = data[swap];
         data[swap] = data[x];
         data[x] = hold;
+        for (int a = 0; a < data.length; a++){
+          System.out.print(data[a] + " ");
+        }
       }
     }
   }
